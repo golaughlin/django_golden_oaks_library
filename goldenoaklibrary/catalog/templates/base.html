@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+        <title>Golden Oak Library</title>
+    {% endblock title %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo">Golden Oaks Library</div>
+        <div class="header__account">
+            <!-- Placeholder login button -->
+            <a href="" class="header__btn">Login</a>
+        </div>
+    </header>
+    <div>
+        <nav class="sidebar">
+            <ul class="sidebar__nav">
+                <li class="sidebar__item">
+                    <a href="{% url 'index' %}" class="sidebar__link">Home</a>
+                </li>
+                <li class="sidebar__item">
+                    <a href="" class="sidebar__link">All Books</a>
+                </li>
+                <li class="sidebar__item">
+                    <a href="" class="sidebar__link">All Authors</a>
+                </li>
+            </ul>
+        </nav>
+        <main class="content">
+            {% block content %}
+            {% endblock content %} 
+        </main>
+    </div>
+    <footer class="footer">
+        <p class="footer__text">Website created by Gage O'Laughlin</p>
+    </footer>
+</body>
+</html>
