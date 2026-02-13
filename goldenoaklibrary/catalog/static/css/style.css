@@ -174,3 +174,19 @@ are side to side.
   margin-bottom: 0;
   font-size: 0.75rem;
 }
+
+/* Table styling */
+.table__data {
+  color: var(--color-neutral-900);
+  font-size: 1rem;
+  font-weight: 400;
+}
+.table__data--success {
+  color: var(--color-success-600);
+}
+.table__data--warning {
+  color: var(--color-warning-600);
+}
+.table__data--danger {
+  color: var(--color-error-600);
+}

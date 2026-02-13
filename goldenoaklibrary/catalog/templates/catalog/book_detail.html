@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="title">Title: {{ book.title }}</h1>
+
+    <dl class="detailed-list">
+        <div class="detailed-list__item">
+            <dt class="detailed-list__term">Author</dt>
+            <dd class="detailed-list__desc">
+                <a href="" class="link">{{ book.author }}</a>
+            </dd>
+        </div>
+        <div class="detailed-list__item">
+            <dt class="detailed-list__term">Genre</dt>
+            <dd class="detailed-list__desc">
+                <a href="" class="link">{{ book.genre }}</a>
+            </dd>
+        </div>
+        <div class="detailed-list__item">
+            <dt class="detailed-list__term">ISBN</dt>
+            <dd class="detailed-list__desc">
+                <a href="" class="link">{{ book.isbn }}</a>
+            </dd>
+        </div>
+        <div class="detailed-list__item">
+            <dt class="detailed-list__term">Language</dt>
+            <dd class="detailed-list__desc">
+                <a href="" class="link">{{ book.language }}</a>
+            </dd>
+        </div>
+    </dl>
+
+    <h2 class="heading">Book Summary</h2>
+    <p class="text">{{ book.summary }}</p>
+
+    <h2 class="heading">Copies</h2>
+    <table class="table">
+        <thead class="table__head">
+            <tr class="table__row">
+                <th scope="col" class="table__header">ID</th>
+                <th scope="col" class="table__header">Imprint</th>
+                <th scope="col" class="table__header">Status</th>
+                <th scope="col" class="table__header">Due Back</th>
+            </tr>
+        </thead>
+        <tbody class="table__body">
+            {% for copy in book.bookinstance_set.all %}
+                <tr class="table__row">
+                    <td class="table__data">{{ copy.id }}</td>
+                    <td class="table__data">{{ copy.imprint }}</td>
+                    <td class="table__data
+                            {% if copy.status == 'a' %}
+                                table__data--success
+                            {% elif copy.status == 'm' %}
+                                table__data--danger
+                            {% else %}
+                                table__data--warning
+                            {% endif %}"
+                    >{{ copy.get_status_display }}</td>
+                    <td class="table__data">
+                        {% if copy.status != 'a' %}
+                            <span>{{ copy.due_back }}</span>
+                        {% else %}
+                            <span>N/A</span>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}

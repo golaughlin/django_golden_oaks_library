@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% block title %}
-        <title>Golden Oak Library</title>
-    {% endblock title %}
+        <title>{% block title %}{% endblock title %}</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
     <header class="headerbar">
-        <div class="headerbar__logo">Golden Oaks Library</div>
+        <div class="headerbar__logo">Golden Oak Library</div>
         <div class="headerbar__account">
             <!-- Placeholder login button -->
             <a href="" class="headerbar__btn">Login</a>
@@ -24,7 +22,7 @@
                     <a href="{% url 'index' %}" class="sidebar__link">🏠 Home</a>
                 </li>
                 <li class="sidebar__item">
-                    <a href="" class="sidebar__link">📚 All Books</a>
+                    <a href="{% url 'books' %}" class="sidebar__link">📚 All Books</a>
                 </li>
                 <li class="sidebar__item">
                     <a href="" class="sidebar__link">👨‍🏫 All Authors</a>
