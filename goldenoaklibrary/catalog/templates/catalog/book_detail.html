@@ -12,21 +12,11 @@
         </div>
         <div class="detailed-list__item">
             <dt class="detailed-list__term">Genre</dt>
-            <dd class="detailed-list__desc">
-                <a href="" class="link">{{ book.genre }}</a>
-            </dd>
+            <dd class="detailed-list__desc">{{ book.genre.all|join:", " }}</dd>
         </div>
         <div class="detailed-list__item">
             <dt class="detailed-list__term">ISBN</dt>
-            <dd class="detailed-list__desc">
-                <a href="" class="link">{{ book.isbn }}</a>
-            </dd>
-        </div>
-        <div class="detailed-list__item">
-            <dt class="detailed-list__term">Language</dt>
-            <dd class="detailed-list__desc">
-                <a href="" class="link">{{ book.language }}</a>
-            </dd>
+            <dd class="detailed-list__desc">{{ book.isbn }}</dd>
         </div>
     </dl>
 
