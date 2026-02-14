@@ -140,6 +140,23 @@ are side to side.
 }
 
 
+/* List styling */
+.list {
+  list-style: disc;
+  margin-left: 1rem;
+}
+
+.list__item {
+  padding: 0.5rem 0;
+  color: var(--color-primary-700);
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+
 /* Table styling */
 .table__data {
   color: var(--color-neutral-900);
