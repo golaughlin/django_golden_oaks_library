@@ -36,6 +36,7 @@
   }
 }
 
+
 /* 
 App container styling.
 On desktop and tablet, the sidebar and main content
@@ -45,6 +46,7 @@ are side to side.
   display: flex;
   flex: 1;
 }
+
 
 /* Sidebar styling */
 .sidebar {
@@ -77,11 +79,30 @@ are side to side.
   }
 }
 
+
 /* Content styling */
 .content {
   flex: 1;
   padding: 1rem;
 }
+
+
+/* Pagination styling */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 1rem;
+}
+
+.pagination__current {
+  display: inline-block;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-foreground);
+}
+
 
 /* Footer styling */
 .footerbar {
@@ -93,6 +114,31 @@ are side to side.
   margin-bottom: 0;
   font-size: 0.75rem;
 }
+
+
+/* Button styling */
+.btn {
+  display: inline-block;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-foreground);
+  background: linear-gradient(to bottom, var(--color-neutral-50), var(--color-neutral-100));
+  border: 1px solid var(--color-neutral-500);
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    background: none;
+    background-color: var(--color-neutral-500);
+  }
+}
+
 
 /* Table styling */
 .table__data {

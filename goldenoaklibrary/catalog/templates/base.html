@@ -33,6 +33,29 @@
             {% block content %}
             {% endblock content %} 
         </main>
+        {% block pagination %}
+            {% if is_paginated %}
+                <aside class="pagination">
+                    {% if page_obj.has_previous %}
+                        <a
+                            href="{{ request.path }}?page={{ page_obj.previous_page_number }}"
+                            class="btn"
+                            role="button"
+                        >Previous</a>
+                    {% endif %}
+                    <span class="pagination__current">
+                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                    </span>
+                    {% if page_obj.has_next %}
+                        <a
+                            href="{{ request.path }}?page={{ page_obj.next_page_number }}"
+                            class="btn"
+                            role="button"
+                        >Next</a>
+                    {% endif %}
+                </aside>
+            {% endif %}
+        {% endblock pagination %}
     </div>
     <footer class="footerbar">
         <p class="footerbar__text">Website created by Gage O'Laughlin</p>
